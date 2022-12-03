@@ -11,10 +11,6 @@ I added 3 feature to the BC Liquor app:
 2. Add a change to the output by showing the number of results found whenever the filters change
 3. Use the DT package to turn a static table into an interactive table
 
-I made this app based on the tutorial given by [Dean Attali](https://deanattali.com/blog/building-shiny-apps-tutorial/). 
-
-Here is the [link](https://github.com/daattali/shiny-server/blob/master/bcl/data/bcl-data.csv) to the original dataset.
-
 ## Assignment B4
 
 My choice of the assignment: **Option C - Shiny App**
@@ -25,3 +21,9 @@ To improve this shiny app, I added the following three features:
 1. Add an input to choose color for the plot
 2. Add a download button to download the filtered data
 3. Place plots and table in separate tabs
+
+## Resourses
+
+I made this app based on the tutorial given by [Dean Attali](https://deanattali.com/blog/building-shiny-apps-tutorial/). 
+
+Here is the [link](https://github.com/daattali/shiny-server/blob/master/bcl/data/bcl-data.csv) to the original dataset.
