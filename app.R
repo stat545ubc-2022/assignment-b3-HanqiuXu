@@ -16,7 +16,7 @@ ui <- fluidPage(
                    selected = "WINE"),
       uiOutput("countryOutput"),
       textInput("col", "Select colour for the plot", "lightblue"), # Feature 1: Add an input to choose color for the plot 
-      downloadButton('download',"Download the filtered data"), # Feature 2: Add a download bottom to download the filtered data
+      downloadButton('download',"Download the filtered data"), # Feature 2: Add a download button to download the filtered data
       br(),br(),
       a(href="https://github.com/daattali/shiny-server/blob/master/bcl/data/bcl-data.csv", 
         "Link to the original data set")

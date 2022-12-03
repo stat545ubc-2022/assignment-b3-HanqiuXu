@@ -23,5 +23,5 @@ My choice of the assignment: **Option C - Shiny App**
 
 To improve this shiny app, I added the following three features:
 1. Add an input to choose color for the plot
-2. Add a download bottom to download the filtered data
+2. Add a download button to download the filtered data
 3. Place plots and table in separate tabs
