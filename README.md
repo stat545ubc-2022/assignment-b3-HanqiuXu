@@ -1,4 +1,6 @@
-This repository is for Assignment B3 about modifying a Shiny app.
+This repository is for Assignment B3 and B4.
+
+#Assignment B3
 
 [You can reach the Shiny app by this link.](http://hanqiuxu.shinyapps.io/assignment-b3-HanqiuXu)
 
@@ -12,3 +14,7 @@ I added 3 feature to the BC Liquor app:
 I made this app based on the tutorial given by [Dean Attali](https://deanattali.com/blog/building-shiny-apps-tutorial/). 
 
 Here is the [link](https://github.com/daattali/shiny-server/blob/master/bcl/data/bcl-data.csv) to the original dataset.
+
+#Assignment B4
+
+[You can reach the Shiny app by this link.](https://hanqiuxu.shinyapps.io/assignment-b4-HanqiuXu/)

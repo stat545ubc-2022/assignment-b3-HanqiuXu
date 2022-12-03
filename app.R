@@ -5,7 +5,7 @@ library(tidyverse)
 bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
 
 ui <- fluidPage(
-  img(src = "bc-liquor-stores-logo-vector.png"), # Feature 1: Add an image to the UI
+  img(src = "bc-liquor-stores-logo-vector.png"), 
   titlePanel("BC Liquor Store prices"),
   sidebarLayout(
     sidebarPanel(
@@ -14,17 +14,20 @@ ui <- fluidPage(
       radioButtons("typeInput", "Product type",
                    choices = c("BEER", "REFRESHMENT", "SPIRITS", "WINE"),
                    selected = "WINE"),
-      uiOutput("countryOutput")
+      uiOutput("countryOutput"),
+      textInput("col", "Select colour for the plot", "lightblue"), # Feature 1: Add an input to choose color for the plot 
+      downloadButton('download',"Download the filtered data"), # Feature 2: Add a download bottom to download the filtered data
+      br(),br(),
+      a(href="https://github.com/daattali/shiny-server/blob/master/bcl/data/bcl-data.csv", 
+        "Link to the original data set")
     ),
     mainPanel(textOutput("ResultsNumber"),
               br(),
-              plotOutput("coolplot"),
-              br(),br(),
-              DT::dataTableOutput("results")
+              tabsetPanel(
+                tabPanel("Plot", plotOutput("coolplot")),
+                tabPanel("Table", DT::dataTableOutput("results")))  # Feature 3: Place plots and table in separate tabs
     )
-  ),
-  a(href="https://github.com/daattali/shiny-server/blob/master/bcl/data/bcl-data.csv", 
-    "Link to the original data set")
+  )
 )
 
 server <- function(input, output) {
@@ -48,19 +51,27 @@ server <- function(input, output) {
   
   output$ResultsNumber <- renderText({
     paste("We found ", nrow(filtered()), "options for you:")
-    }) # Feature 2: Add a change to the output: show the number of results found whenever the filters change
+    }) 
   
   output$coolplot <- renderPlot({
     if (is.null(filtered())) {
       return()
     }
     ggplot(filtered(), aes(Alcohol_Content)) +
-      geom_histogram()
+      geom_histogram(fill = input$col)
   })
   
   output$results <- DT::renderDataTable({
     filtered() 
-  }) # Feature 3: use the DT package to turn a static table into an interactive table
+  }) 
+  
+  output$dto <- renderDataTable({filtered()})
+  output$download <- downloadHandler(
+    filename = function(){"data.csv"}, 
+    content = function(fname){
+      write.csv(filtered(), fname)
+    }
+  )
 }
 
 shinyApp(ui = ui, server = server)                                       
