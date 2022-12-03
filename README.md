@@ -1,6 +1,6 @@
 This repository is for Assignment B3 and B4.
 
-#Assignment B3
+## Assignment B3
 
 [You can reach the Shiny app by this link.](http://hanqiuxu.shinyapps.io/assignment-b3-HanqiuXu)
 
@@ -15,6 +15,13 @@ I made this app based on the tutorial given by [Dean Attali](https://deanattali.
 
 Here is the [link](https://github.com/daattali/shiny-server/blob/master/bcl/data/bcl-data.csv) to the original dataset.
 
-#Assignment B4
+## Assignment B4
+
+My choice of the assignment: **Option C - Shiny App**
 
 [You can reach the Shiny app by this link.](https://hanqiuxu.shinyapps.io/assignment-b4-HanqiuXu/)
+
+To improve this shiny app, I added the following three features:
+1. Add an input to choose color for the plot
+2. Add a download bottom to download the filtered data
+3. Place plots and table in separate tabs
